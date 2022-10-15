@@ -47,7 +47,7 @@ v2ray_error_log="/var/log/v2ray/error.log"
 amce_sh_file="/root/.acme.sh/acme.sh"
 ssl_update_file="/usr/bin/ssl_update.sh"
 nginx_version="1.23.1"
-openssl_version="3.0.5"
+openssl_version="3.0.6"
 jemalloc_version="5.3.0"
 old_config_status="off"
 # v2ray_plugin_version="$(wget -qO- "https://github.com/shadowsocks/v2ray-plugin/tags" | grep -E "/shadowsocks/v2ray-plugin/releases/tag/" | head -1 | sed -r 's/.*tag\/v(.+)\">.*/\1/')"
@@ -1004,8 +1004,6 @@ modify_camouflage_path() {
 menu() {
     update_sh
     echo -e "\t V2ray 安装管理脚本 ${Red}[${shell_version}]${Font}"
-    echo -e "\t---authored by wulabing---"
-    echo -e "\thttps://github.com/wulabing\n"
     echo -e "当前已安装版本:${shell_mode}\n"
 
     echo -e "—————————————— 安装向导 ——————————————"""
