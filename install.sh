@@ -39,7 +39,7 @@ v2ray_bin_dir_old="/usr/bin/v2ray"
 v2ray_bin_dir="/usr/local/bin/v2ray"
 v2ctl_bin_dir="/usr/local/bin/v2ctl"
 v2ray_info_file="$HOME/v2ray_info.inf"
-v2ray_qr_config_file="/usr/local/vmess_qr.json"
+v2ray_qr_config_file="$HOME/vmess_qr.json"
 nginx_systemd_file="/etc/systemd/system/nginx.service"
 v2ray_systemd_file="/etc/systemd/system/v2ray.service"
 v2ray_access_log="/var/log/v2ray/access.log"
@@ -441,8 +441,8 @@ domain_check() {
         wg-quick down wgcf >/dev/null 2>&1
         echo -e "${OK} ${GreenBG} 已关闭 wgcf-warp ${Font}"
     fi
-    local_ipv4=$(curl -s4m8 https://ifconfig.co/)
-    local_ipv6=$(curl -s6m8 https://ifconfig.co/)
+    local_ipv4=$(curl -4 ip.sb)
+    local_ipv6=$(curl -6 ip.sb)
     if [[ -z ${local_ipv4} && -n ${local_ipv6} ]]; then
         echo -e nameserver 2a01:4f8:c2c:123f::1 > /etc/resolv.conf
         echo -e "${OK} ${GreenBG} 识别为 IPv6 Only 的 VPS，自动添加 DNS64 服务器 ${Font}"
