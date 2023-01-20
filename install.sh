@@ -440,7 +440,7 @@ domain_check() {
         # 关闭wgcf-warp，以防误判VPS IP情况
         wg-quick down wgcf >/dev/null 2>&1
         echo -e "${OK} ${GreenBG} 已关闭 wgcf-warp ${Font}"
-    fi 
+    fi
     local_ipv4=$(curl -s4m8 http://ip.sb)
     local_ipv6=$(curl -s6m8 http://ip.sb)
     if [[ -z ${local_ipv4} && -n ${local_ipv6} ]]; then
