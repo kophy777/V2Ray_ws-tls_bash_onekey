@@ -182,9 +182,6 @@ dependency_install() {
     ${INS} -y install unzip
     judge "安装 unzip"
 
-    ${INS} -y install qrencode
-    judge "安装 qrencode"
-
     ${INS} -y install curl
     judge "安装 curl"
 
@@ -917,11 +914,7 @@ install_v2ray_ws_tls() {
     web_camouflage
     ssl_judge_and_install
     nginx_systemd
-    vmess_qr_config_tls_ws
-    basic_information
-    vmess_link_image_choice
     tls_type
-    show_information
     start_process_systemd
     enable_process_systemd
     acme_cron_update
